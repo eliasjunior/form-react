@@ -15,6 +15,5 @@ export default function BaseComponent({
 
 export function handleInput({ value, onChangeCallback, validations }) {
   const isValid = isInputValid(validations, value);
-  console.log('newValue', value, isValid)
   onChangeCallback({ value, isValid });
 }

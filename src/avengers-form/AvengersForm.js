@@ -11,22 +11,7 @@ export default class AvengersForm extends React.Component {
   }
   componentDidMount() {
     const form = { ...this.state.form };
-    this.props.children.forEach(child => {
-      const {
-        props
-      } = child;
-      if (props.name && !form[props.name]) {
-        form[props.name] = {
-          isValid: false,
-          value: props.value,
-          onChange: ({ value, isValid }) => {
-            const { name } = props;
-            setFormComponentsState({ form, value, isValid, name })
-            this.setState({ form: setFormValidState({ form }) });
-          }
-        }
-      }
-    })
+    createStateForFormChild({children: this.props.children, form, context: this})
     this.setState({ form: setFormValidState({ form }) });
     this.props.onValid &&
       this.props.onValid(form.isValid);
@@ -59,6 +44,24 @@ export default class AvengersForm extends React.Component {
 }
 
 // === Private functions
+function createStateForFormChild({children, form, context}) {
+  children.forEach(child => {
+    const {
+      props
+    } = child;
+    if (props.name && !form[props.name]) {
+      form[props.name] = {
+        isValid: false,
+        value: props.value,
+        onChange: ({ value, isValid }) => {
+          const { name } = props;
+          setFormComponentsState({ form, value, isValid, name })
+          context.setState({ form: setFormValidState({ form }) });
+        }
+      }
+    }
+  })
+}
 function setFormComponentsState({ form, value, isValid, name }) {
   const newForm = { ...form };
   newForm[name].value = value;
