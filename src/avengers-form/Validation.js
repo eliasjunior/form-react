@@ -3,7 +3,6 @@ import React from 'react';
 export default function Validation({value, validations, name}) {
   return validations.map((validationFn, i) => {
     const valObject = validationFn(value, name);
-    console.log(valObject)
     return valObject.isValid ? '' : 
       <ErrorInput key={i} error={valObject.error} />;
   })
@@ -34,5 +33,5 @@ function onlyLetter(text = '') {
   return text.match(upperLowerSpace) ? true : false;
 }
 function ErrorInput({ error }) {
-  return <div className='error-message'>{error}</div>
+  return <div className='error-message'><div>{error}</div></div>
 }

@@ -16,6 +16,10 @@
   transition: all .3s ease;
 }
 
+.btn-submit-disabled {
+  background: #9fccd3;
+}
+
 .btn-submit {
   background: #4dbecf;
   /* margin-left: 1em; */

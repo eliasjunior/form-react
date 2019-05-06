@@ -5,15 +5,20 @@ import './styles/Components.css';
 function Submit({
   labelText,
 }) {
+  const getClasses = (isDisabled) => {
+    return isDisabled ? 'btn btn-submit-disabled' : 'btn btn-submit';
+  }
   return (
     <FormContext.Consumer>
       {({ form }) => (
-        <input className="btn btn-submit"
-          disabled={!form.isValid}
-          value={labelText}
-          type="submit"
-          name="form-submit">
-        </input>
+        <div className="form-row">
+          <input className={getClasses(!form.isValid)}
+            disabled={!form.isValid}
+            value={labelText}
+            type="submit"
+            name="form-submit">
+          </input>
+        </div>
       )}
     </FormContext.Consumer>
   )
