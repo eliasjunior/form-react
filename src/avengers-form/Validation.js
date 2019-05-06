@@ -3,6 +3,7 @@ import React from 'react';
 export default function Validation({value, validations, name}) {
   return validations.map((validationFn, i) => {
     const valObject = validationFn(value, name);
+    console.log(valObject)
     return valObject.isValid ? '' : 
       <ErrorInput key={i} error={valObject.error} />;
   })

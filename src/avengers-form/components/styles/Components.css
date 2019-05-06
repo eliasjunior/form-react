@@ -1,0 +1,23 @@
+.btn {
+  display: block;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: .75em;
+  letter-spacing: 1px;
+  height: 38px;
+  width: 120px;
+  line-height: 38px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 15px 30px rgba(black,.1);
+  border: 0;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn-submit {
+  background: #4dbecf;
+  /* margin-left: 1em; */
+  color: whitesmoke;
+}

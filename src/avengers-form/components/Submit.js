@@ -1,14 +1,15 @@
 import React from 'react';
 import { FormContext } from '../AvengersForm';
+import './styles/Components.css';
 
 function Submit({
   labelText,
 }) {
   return (
     <FormContext.Consumer>
-      {({ isValid }) => (
+      {({ form }) => (
         <input className="btn btn-submit"
-          disabled={!isValid}
+          disabled={!form.isValid}
           value={labelText}
           type="submit"
           name="form-submit">
