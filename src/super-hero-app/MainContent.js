@@ -1,8 +1,8 @@
 import React from 'react';
-import AvengersForm from './avengers-form/AvengersForm';
-import InputText from './avengers-form/components/InputText';
-import Submit from './avengers-form/components/Submit';
-import { required, onlyLetters } from './avengers-form/Validation';
+import AvengersForm from '../avengers-form/AvengersForm';
+import InputText from '../avengers-form/components/InputText';
+import Submit from '../avengers-form/components/Submit';
+import { required, onlyLetters } from '../avengers-form/Validation';
 
 const validations = [required(), onlyLetters()];
 
