@@ -9,7 +9,6 @@ export default class InputText extends React.Component {
     const {
       onInputValid
     } = this.props;
-    console.log('componentDidMount isValid ', this.state.isValid)
     // tells form parent if it is valid
     onInputValid(this.state.isValid)
   }
@@ -27,6 +26,7 @@ export default class InputText extends React.Component {
     const {
       labelText,
       value,
+      name,
       validations = [],
     } = this.props;
 
@@ -39,10 +39,11 @@ export default class InputText extends React.Component {
           <input className="base-input" type="text"
             defaultValue={value} 
             onChange={this.handleInput.bind(this)} 
-            name="addHero"></input>
+            name={name}></input>
         </div>
         <Validation 
           value={value} 
+          name={name}
           validations={validations}>
         </Validation>
       </React.Fragment>

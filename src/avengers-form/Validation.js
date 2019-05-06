@@ -1,26 +1,26 @@
 import React from 'react';
 
-export default function Validation({value, validations}) {
-  return validations.map((validation, i) => {
-    const val = validation(value);
-    return val.isValid ? '' : 
-      <ErrorInput key={i} error={val.error} />;
+export default function Validation({value, validations, name}) {
+  return validations.map((validationFn, i) => {
+    const valObject = validationFn(value, name);
+    return valObject.isValid ? '' : 
+      <ErrorInput key={i} error={valObject.error} />;
   })
 }
 export function isInputValid(validations, value) {
   const inValidFn = validations.find(val => val(value).isValid === false)
   return  inValidFn ? false : true;
 }
-export const required = () => {
-  return (value) => ({
+export const required = (field) => {
+  return (value, name) => ({
     isValid: (value  && value !== '') ? true : false,
-    error: 'Hero is required'
+    error: `${field ? field : name} is required`
   })
 }
-export const onlyLetters = () => {
-  return (value) => ({
+export const onlyLetters = (field) => {
+  return (value, name) => ({
     isValid: onlyLetter(value),
-    error: 'only letters loco',
+    error: `${field ? field : name} accepts only letters loco`,
   })
 }
 

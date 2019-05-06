@@ -4,8 +4,7 @@ import InputText from '../avengers-form/components/InputText';
 import Submit from '../avengers-form/components/Submit';
 import { required, onlyLetters } from '../avengers-form/Validation';
 
-const validations = [required(), onlyLetters()];
-
+const validations = [required('Add Hero'), onlyLetters('Add Hero')];
 export default class MainContent extends React.Component {
   state = {
     form: {
