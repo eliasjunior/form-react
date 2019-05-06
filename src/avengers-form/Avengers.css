@@ -1,0 +1,36 @@
+.avengers-form {
+  margin: 1em;
+  background-color: hsl(216, 6%, 52%);
+}
+.form-row {
+  display: flex;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.label-field {
+  padding-right: 0.5em;
+  font-weight: 600;
+  color: white;
+}
+.base-input {
+  border-width: 0.15em;
+  border-style: solid;
+  border-left-width: 0.5em;
+  border-radius: 0.3em;
+  flex:1;
+}
+.base-input:invalid {
+  border-color: rgb(255, 81, 0);
+}
+.base-input:valid {
+  border-color: rgb(72, 255, 0);
+}
+.error-message {
+  color: orangered;
+  font-weight: 600;
+  padding-left: 1em;
+}
+

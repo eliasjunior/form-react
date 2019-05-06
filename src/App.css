@@ -1,16 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
+body {
   background-color: #282c34;
-  min-height: 100vh;
+}
+.avengers-header {
+  min-height: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,16 +10,42 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.hero-list { 
+  flex: 2;
+  border: solid;
+  background-color: gray;
+  order: 2;
+}
+.side-bar-left {
+  flex: 1;
+  order: 1;
+  border: solid;
+  background-color: crimson;
+}
+.side-bar-right {
+  flex: 1;
+  order: 3;
+  border: solid;
+  background-color: darkviolet;
+}
+.side-title {
+  font-weight: 700;
+  padding-left: 0.5em;
+  color:whitesmoke;
+}
+.li-link {
+  list-style-type: roman;
+}
+.base-link {
+  color: rgb(255, 123, 0);
+  text-decoration: none;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media(min-width: 600px) {
+  .content-page {
+    display: flex;
   }
 }
