@@ -7,15 +7,14 @@ import MainContent from './MainContent';
 
 function App() {
   return (
-    <div >
+    <>
       <Header></Header>
       <div className="content-page">
         <MainContent></MainContent>
         <SideBarLeft></SideBarLeft>
         <SideBarRight></SideBarRight>
       </div>
-
-    </div>
+    </>
   );
 }
 

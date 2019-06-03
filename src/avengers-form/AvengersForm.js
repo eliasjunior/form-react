@@ -11,7 +11,11 @@ export default class AvengersForm extends React.Component {
   }
   componentDidMount() {
     const form = { ...this.state.form };
-    createStateForFormChild({children: this.props.children, form, context: this})
+    createStateForFormChildren({
+      children: this.props.children, 
+      form, 
+      context: this,
+    })
     this.setState({ form: setFormValidState({ form }) });
     this.props.onValid &&
       this.props.onValid(form.isValid);
@@ -44,7 +48,7 @@ export default class AvengersForm extends React.Component {
 }
 
 // === Private functions
-function createStateForFormChild({children, form, context}) {
+function createStateForFormChildren({children, form, context}) {
   children.forEach(child => {
     const {
       props

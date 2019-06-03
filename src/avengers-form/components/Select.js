@@ -6,10 +6,8 @@ import { FormContext } from '../AvengersForm';
 export default function Select({
   labelText,
   name,
-  placeholder,
   options,
   validations = [],
-  onInputValid,
 }) {
   const getClasses = (isValid) => {
     return isValid ? "base-input" : "base-input invalid";
@@ -44,7 +42,6 @@ export default function Select({
           </div>
           <BaseComponent
             validations={validations}
-            onInputValid={onInputValid}
             name={name}
             value={value}>
           </BaseComponent>
